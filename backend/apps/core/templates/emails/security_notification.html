@@ -1,0 +1,33 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Security Alert for {{ user_name }},</div>
+
+<p class="message-lead">
+    We detected a security event related to your Smart Bazaar account. Please review the details below:
+</p>
+
+<table class="credential-table">
+    <tr>
+        <th>Event Description</th>
+        <td><strong>{{ event_description }}</strong></td>
+    </tr>
+    <tr>
+        <th>IP Address</th>
+        <td>{{ ip_address|default:"Not recorded" }}</td>
+    </tr>
+    <tr>
+        <th>Device / User Agent</th>
+        <td>{{ user_agent|default:"Standard Web Browser" }}</td>
+    </tr>
+    <tr>
+        <th>Timestamp</th>
+        <td>{{ timestamp }}</td>
+    </tr>
+</table>
+
+<div class="security-badge" style="background-color: #FEF2F2; border-left-color: #DC2626; color: #991B1B;">
+    <strong>⚠️ Important:</strong> If you did not perform this action, your account credentials may be compromised.
+    Please sign in immediately and change your password, or contact your platform administrator.
+</div>
+{% endblock %}

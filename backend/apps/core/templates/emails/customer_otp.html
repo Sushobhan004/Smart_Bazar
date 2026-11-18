@@ -1,0 +1,25 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Hello {{ customer_name|default:"Valued Customer" }},</div>
+
+<p class="message-lead">
+    Thank you for visiting <strong>{{ shop_name|default:"Smart Bazaar" }}</strong>!
+    To complete your customer registration, digital receipt delivery, and loyalty benefits setup, please share this 6-digit code with the cashier:
+</p>
+
+<div class="otp-box-wrap">
+    <div class="otp-box">{{ raw_otp }}</div>
+    <div class="meta-notice">⏳ Valid for {{ expiry_minutes|default:5 }} minutes &bull; Single-use verification</div>
+</div>
+
+<div class="security-badge">
+    <strong>🛍️ Customer Benefits Activated After Verification:</strong>
+    Instant digital receipts sent to your Gmail, loyalty points on every purchase, and paperless supermarket checkout.
+</div>
+
+<p style="font-size: 13px; color: #475569; margin-top: 20px;">
+    <strong>Store Location:</strong> {{ shop_name }}<br>
+    <strong>Registered Email:</strong> {{ recipient_email }}
+</p>
+{% endblock %}

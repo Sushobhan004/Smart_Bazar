@@ -1,0 +1,47 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Welcome to the Team, {{ employee_name }}! 💼</div>
+
+<p class="message-lead">
+    Your staff profile has been created and linked to <strong>{{ shop_name }}</strong>.
+    You have been assigned the role of <strong>{{ role|default:"Cashier / POS Terminal Operator" }}</strong>.
+</p>
+
+<table class="credential-table">
+    <tr>
+        <th>Store Name</th>
+        <td>{{ shop_name }}</td>
+    </tr>
+    <tr>
+        <th>Store ID</th>
+        <td>{{ shop_id }}</td>
+    </tr>
+    <tr>
+        <th>Employee ID</th>
+        <td><strong>{{ employee_id }}</strong></td>
+    </tr>
+    <tr>
+        <th>Staff Login ID</th>
+        <td><strong>{{ login_id }}</strong></td>
+    </tr>
+    <tr>
+        <th>Temporary Password</th>
+        <td><code>{{ temp_password }}</code></td>
+    </tr>
+    <tr>
+        <th>Assigned Role</th>
+        <td><strong>{{ role }}</strong></td>
+    </tr>
+</table>
+
+<div style="text-align: center;">
+    <a href="{{ login_url }}" class="btn-cta">⚡ Access POS Terminal</a>
+</div>
+
+<div class="security-badge">
+    <strong>🔒 Staff Security Policy:</strong>
+    Your account is authorized strictly for <strong>{{ shop_name }}</strong>. You cannot access or view data from other store locations.
+    Please change your temporary password upon your initial sign in.
+</div>
+{% endblock %}

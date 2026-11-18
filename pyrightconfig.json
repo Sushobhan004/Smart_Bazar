@@ -1,0 +1,39 @@
+{
+    "executionEnvironments": [
+        {
+            "root": "backend",
+            "extraPaths": [
+                "backend",
+                "backend/apps",
+                "."
+            ]
+        },
+        {
+            "root": ".",
+            "extraPaths": [
+                ".",
+                "backend",
+                "backend/apps",
+                "apps"
+            ]
+        }
+    ],
+    "include": [
+        "backend",
+        "apps",
+        "."
+    ],
+    "extraPaths": [
+        ".",
+        "backend",
+        "backend/apps",
+        "apps"
+    ],
+    "typeCheckingMode": "off",
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none",
+    "reportAttributeAccessIssue": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportArgumentType": "none"
+}

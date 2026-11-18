@@ -1,0 +1,51 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Welcome to Smart Bazaar, {{ owner_name }}! 🎉</div>
+
+<p class="message-lead">
+    Your store, <strong>{{ shop_name }}</strong>, has been successfully provisioned with an independent, dedicated database and administrative dashboard.
+    Below are your official store credentials and access details:
+</p>
+
+<table class="credential-table">
+    <tr>
+        <th>Store Name</th>
+        <td>{{ shop_name }}</td>
+    </tr>
+    <tr>
+        <th>Store ID (Code)</th>
+        <td><strong>{{ shop_id }}</strong></td>
+    </tr>
+    <tr>
+        <th>Owner ID</th>
+        <td><strong>{{ owner_id }}</strong></td>
+    </tr>
+    <tr>
+        <th>Login ID / Username</th>
+        <td><strong>{{ login_id }}</strong></td>
+    </tr>
+    <tr>
+        <th>Initial Password</th>
+        <td><code>{{ temp_password }}</code></td>
+    </tr>
+    <tr>
+        <th>Database Status</th>
+        <td><span style="color: #15803D; font-weight: 700;">PROVISIONED &amp; ACTIVE</span></td>
+    </tr>
+</table>
+
+<div style="text-align: center;">
+    <a href="{{ login_url }}" class="btn-cta">🚀 Log in to Your Shop Dashboard</a>
+</div>
+
+<div class="security-badge">
+    <strong>🔒 First-Time Login Instructions:</strong>
+    <ol style="margin: 6px 0 0 16px; padding: 0;">
+        <li>Visit the Smart Bazaar portal via the link above.</li>
+        <li>Sign in using your <strong>Login ID</strong> and the temporary password provided above.</li>
+        <li>You will start with a fresh, empty workspace: add your products, staff, and store profile.</li>
+        <li>For security, please change your temporary password immediately upon your first sign in.</li>
+    </ol>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "extraPaths": [
+                ".",
+                "apps"
+            ]
+        }
+    ],
+    "include": [
+        "."
+    ],
+    "extraPaths": [
+        ".",
+        "apps"
+    ],
+    "typeCheckingMode": "off",
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none",
+    "reportAttributeAccessIssue": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportArgumentType": "none"
+}

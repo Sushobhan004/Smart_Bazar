@@ -1,0 +1,40 @@
+# Python & Virtual Environments
+venv/
+env/
+ENV/
+*.py[cod]
+*$py.class
+__pycache__/
+
+# Environment variables & secrets (NEVER push real keys to GitHub)
+.env
+*.env.local
+
+# Django database & media
+*.sqlite3
+backend/db.sqlite3
+backend/databases/*.sqlite3
+backend/media/receipts/
+
+# Temporary / Scratch files
+scratch/
+*.log
+
+# Windows NTFS junctions pointing to backend/
+/apps
+/smart_bazaar
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Mobile / Flutter artifacts
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub/
+mobile/.pub-cache/

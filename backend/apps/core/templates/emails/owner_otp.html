@@ -1,0 +1,24 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Hello {{ recipient_name|default:"Store Owner" }},</div>
+
+<p class="message-lead">
+    A request has been initiated by the <strong>Super Administrator</strong> to register your store on the Smart Bazaar Platform.
+    Please use the 6-digit One-Time Password (OTP) below to verify your Gmail address and complete your shop registration.
+</p>
+
+<div class="otp-box-wrap">
+    <div class="otp-box">{{ raw_otp }}</div>
+    <div class="meta-notice">⏳ Valid for {{ expiry_minutes|default:5 }} minutes &bull; Single-use only</div>
+</div>
+
+<div class="security-badge">
+    <strong>🛡️ Security Warning:</strong> Do not share this OTP with anyone. Smart Bazaar platform engineers or support staff will never ask for your password or verification code. If you did not request this account setup, please ignore this email.
+</div>
+
+<p style="font-size: 13px; color: #475569; margin-top: 20px;">
+    <strong>Verification Purpose:</strong> SHOP OWNER REGISTRATION (Level 2 Platform Authority)<br>
+    <strong>Registered Email:</strong> {{ recipient_email }}
+</p>
+{% endblock %}

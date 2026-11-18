@@ -1,0 +1,25 @@
+{% extends "emails/base_email.html" %}
+
+{% block content %}
+<div class="greeting">Hello {{ recipient_name|default:"Team Member" }},</div>
+
+<p class="message-lead">
+    Your store manager at <strong>{{ shop_name|default:"Smart Bazaar" }}</strong> has initiated your staff account registration.
+    Please use the 6-digit verification code below to verify your Gmail address and activate your staff access credentials.
+</p>
+
+<div class="otp-box-wrap">
+    <div class="otp-box">{{ raw_otp }}</div>
+    <div class="meta-notice">⏳ Valid for {{ expiry_minutes|default:5 }} minutes &bull; Single-use only</div>
+</div>
+
+<div class="security-badge">
+    <strong>🛡️ Security Warning:</strong> Do not share this OTP with anyone outside your store manager. This verification is required to bind your employee account to the authorized shop database.
+</div>
+
+<p style="font-size: 13px; color: #475569; margin-top: 20px;">
+    <strong>Verification Purpose:</strong> STAFF / WORKER REGISTRATION (Level 3 Store Authority)<br>
+    <strong>Store Name:</strong> {{ shop_name }}<br>
+    <strong>Registered Email:</strong> {{ recipient_email }}
+</p>
+{% endblock %}
